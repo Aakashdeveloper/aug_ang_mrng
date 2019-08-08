@@ -1,0 +1,140 @@
+open source 
+npm
+node package manager
+=> Local package
+=> Global package
+    Setup, create, build and test
+
+JSON
+JavaScript Object Notation
+Data represantaion
+
+string   ="aakash" ,"10"
+number  =4655465467, 45645.456
+boolean = true /false
+
+[
+    {
+        name:"John",
+        class:"UI",
+        rollno:1
+    },
+    {
+        name:"Alis",
+        class:"AI",
+        rollno:2
+    }
+]
+
+=>package.json 
+
+First file and entry file to application
+version
+name
+packages
+start command
+test command
+description
+
+/*************************************
+Step to Create Package.json
+******************************/
+=>Go inside the folder with cmd/terminal
+    =>npm init
+        => Answer all qouestions
+            =>type yes
+                => press enter
+
+/**********************
+{
+  "name": "myangapp",
+  "version": "1.0.0",
+  "description": "this is about setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "node"
+  ],
+  "author": "nareshit",
+  "license": "ISC"
+}
+*******************************/
+
+
+/*********************************
+    Step to install local package
+*********************************/
+=>Go inside the folder with cmd/terminal
+    =>npm install zone.js --save
+
+CLI=> command line interface
+
+/*****************************
+Step to install global package
+****************************/
+//For window
+=>Run cmd as admin
+    =>npm i -g @aakashdeveloper/create-node-app
+
+//For mac/linux
+=>run terminal
+    => sudo npm i -g @aakashdeveloper/create-node-app
+
+
+/***********************************
+Step to setup angular app
+****************************/
+=>Install cli globally
+    =>npm i -g @angular/cli
+        =>Go inside the folder where you 
+          want app with cmd
+          =>ng new secondapp
+                =>cd secondapp
+                    =>npm start
+                        =>Browser type localhost:4200
+
+/***********************************************************/
+module      => declare all file here
+component   => is a page of a website
+               have its own html css logics
+               => component.ts   => logics
+               => component.html =>design
+               => component.css  => style
+pipe        => filtering logic or run time data logics
+service     => Dependceny injection/ any external connection
+routing     => to navigate 
+
+
+=> One parent module & one parent component
+
+
+
+.ts(typescript)
+
+
+package.json=>angular.json=>index.html=>main.ts=>app.module.ts=>app.component.ts=>component.html
+
+/*****
+Imports
+*******/
+Module => NgModule
+Component => Component
+
+
+
+/*****************
+    Step Form component
+*********************/
+First Create Module file
+    => Create Component file
+        => declare component in module
+            =>Import browsermodule and declare in imports array
+                => copy component selector 
+                    => put inside the html body
+
+*** Only first conponent will declare in bootstrap array
+*** Only first component will be in index.html  
+    Rest all will load through main component
