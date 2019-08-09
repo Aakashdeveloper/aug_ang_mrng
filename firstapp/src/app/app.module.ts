@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MySecondComponent } from './mysecond.component';
+import { ProductComponent } from './products/product.component';
 
 @NgModule({
     // All Component & Pipe
     declarations: [
         AppComponent,
-        MySecondComponent
+        MySecondComponent,
+        ProductComponent
     ],
 
     // All Module

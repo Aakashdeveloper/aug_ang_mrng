@@ -138,3 +138,28 @@ First Create Module file
 *** Only first conponent will declare in bootstrap array
 *** Only first component will be in index.html  
     Rest all will load through main component
+
+
+/***********************************
+ Binding in Angular
+****************************/
+OneWay
+=>Data Binding
+=>Property Binding
+=>Event Binding
+
+TwoWay Binding
+
+
+
+//***********************************
+ BootStrap in Angular
+****************************/
+Grid
+Table
+Panel
+Button
+forms
+alert
+glyphicon
+navbar
