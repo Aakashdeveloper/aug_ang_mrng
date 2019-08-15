@@ -4,13 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MySecondComponent } from './mysecond.component';
 import { ProductComponent } from './products/product.component';
+import { MyUpperCasePipe } from './products/myupper.pipe';
+import { MyDiscountPipe } from './products/discount.pipe';
 
 @NgModule({
     // All Component & Pipe
     declarations: [
         AppComponent,
         MySecondComponent,
-        ProductComponent
+        ProductComponent,
+        MyUpperCasePipe,
+        MyDiscountPipe
     ],
 
     // All Module
