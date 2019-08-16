@@ -51,3 +51,8 @@ export class ProductComponent {
         this.showImage = !this.showImage;
     }
 }
+
+/*
+const ages = [32, 33, 16, 40];
+ages.filter((age) => { return age >= 18 })}
+*/

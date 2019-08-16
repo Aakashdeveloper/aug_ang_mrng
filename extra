@@ -209,9 +209,19 @@ Structral directive
 *ngFor = to print data from the loop
 *ngIF  = to show/ hide and work on boolean value
 
+/***********************
+**********************/
 var
 let 
 const
+
+var a = 10
+var a 
+a = 10
+
+var  = We can declare and reassign
+let = we cannot redecalre but we can reassign
+const = we cannot redecalre nor reassign
 
 
 /*************
@@ -228,3 +238,28 @@ percentage
 https://www.w3schools.com/jsref/jsref_map.asp
  https://www.w3schools.com/jsref/jsref_filter.asp 
 https://www.w3schools.com/jsref/jsref_indexof.asp
+
+/**************
+    Functions
+***************/
+function add(a,b){
+    return a+b
+}
+
+const add = (a,b)  => { return a+b }
+
+
+const ages = [32, 33, 16, 40];
+ages.filter((age) => { return age >= 18 })}
+
+var numbers = [4, 9, 16, 25];
+numbers.map((a) => {return a*2})
+
+
+var marks = [0,1,2,3,4]
+marks.map((a) => {return a*2})
+
+var marks = [0,1,2,3,4]
+marks.filter((a) => {return a*2})
+
+var city = ["London","Delhi", "NewYork",,"Helsinki"]
