@@ -1,17 +1,22 @@
 import {Component} from '@angular/core';
+import { IProduct } from './product.model';
 
 @Component({
     selector: 'app-product',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.css']
+    // styles: ['thead{color:orange}', 'h4{color:green}' ]
 })
 
 
 export class ProductComponent {
     title: string = 'Product App Nareshit';
     showImage: boolean  = false;
+    userInput: string;
+    imageWidth = 100;
 
 
-    products: any[] = [
+    products: IProduct[] = [
         {
             _id: '5a05dacc734d1d68d42d31f3',
             productId: 1,
@@ -44,6 +49,17 @@ export class ProductComponent {
             price: 8.9,
             starRating: 4.8,
             imageUrl: 'https://i.ibb.co/TrR7jkM/hammer.png'
+        },
+        {
+            _id: '5a05daec734d1d68d42d32ca',
+            productId: 2,
+            productName: 'Garden Cart',
+            productCode: 'GDN-0023',
+            releaseDate: 'March 18, 2016',
+            description: '15 gallon capacity rolling garden cart',
+            price: 25.99,
+            starRating: 4.2,
+            imageUrl: 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
         }
     ];
 

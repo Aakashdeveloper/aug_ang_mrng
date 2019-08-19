@@ -1,11 +1,13 @@
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MySecondComponent } from './mysecond.component';
 import { ProductComponent } from './products/product.component';
 import { MyUpperCasePipe } from './products/myupper.pipe';
 import { MyDiscountPipe } from './products/discount.pipe';
+import { ProductSearchPipe } from './products/product-search.pipe';
 
 @NgModule({
     // All Component & Pipe
@@ -14,12 +16,14 @@ import { MyDiscountPipe } from './products/discount.pipe';
         MySecondComponent,
         ProductComponent,
         MyUpperCasePipe,
-        MyDiscountPipe
+        MyDiscountPipe,
+        ProductSearchPipe
     ],
 
     // All Module
     imports: [
-        BrowserModule
+        BrowserModule,
+        FormsModule
     ],
 
     // Only and only main comnponent

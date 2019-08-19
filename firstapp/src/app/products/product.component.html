@@ -8,12 +8,15 @@
                 Filter
             </div>
             <div class="col-md-4">
-                <input type="text" placeholder="Enter Your Search"/>
+                <input type="text" placeholder="Enter Your Search"
+                [(ngModel)]="userInput"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h4>Number of Product filtered on basis of</h4>
+                <h4>Number of Product filtered on basis of {{userInput}} is :
+                    {{(products | productsearch:userInput).length}}
+                </h4>
             </div>
         </div>
         <table class="table table-responsive">
@@ -34,9 +37,10 @@
                 </tr>
             </thead>
             <tbody >
-                <tr *ngFor="let prod of products">
+                <tr *ngFor="let prod of products | productsearch:userInput ">
                     <td>
                         <img [src]="prod.imageUrl"
+                            [style.width.px]="imageWidth"
                              *ngIf="showImage">
                     </td>
                     <td>{{prod.productName | myUpperCase:'upper'}}</td>
