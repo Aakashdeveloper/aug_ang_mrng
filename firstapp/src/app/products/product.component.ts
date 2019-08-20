@@ -14,7 +14,11 @@ export class ProductComponent {
     showImage: boolean  = false;
     userInput: string;
     imageWidth = 100;
+    serverStatus: string = 'Offline';
 
+    constructor() {
+        this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+    }
 
     products: IProduct[] = [
         {
@@ -65,6 +69,10 @@ export class ProductComponent {
 
     toggleImage(): void {
         this.showImage = !this.showImage;
+    }
+
+    getColor() {
+        return this.serverStatus === 'Online' ? 'green' : 'red';
     }
 }
 

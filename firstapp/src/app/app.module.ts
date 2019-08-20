@@ -8,6 +8,7 @@ import { ProductComponent } from './products/product.component';
 import { MyUpperCasePipe } from './products/myupper.pipe';
 import { MyDiscountPipe } from './products/discount.pipe';
 import { ProductSearchPipe } from './products/product-search.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
     // All Component & Pipe
@@ -17,7 +18,8 @@ import { ProductSearchPipe } from './products/product-search.pipe';
         ProductComponent,
         MyUpperCasePipe,
         MyDiscountPipe,
-        ProductSearchPipe
+        ProductSearchPipe,
+        StarComponent
     ],
 
     // All Module

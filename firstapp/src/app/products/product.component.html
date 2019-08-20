@@ -1,3 +1,8 @@
+<h3 [ngStyle]="{color:getColor()}"
+    [ngClass]="{online: serverStatus === 'Online'}">
+    Server status is {{serverStatus}}
+</h3>
+
 <div class="panel panel-danger">
     <div class="panel-heading">
         <h3>{{title}}</h3>
@@ -8,7 +13,7 @@
                 Filter
             </div>
             <div class="col-md-4">
-                <input type="text" placeholder="Enter Your Search"
+                <input  placeholder="Enter Your Search"
                 [(ngModel)]="userInput"/>
             </div>
         </div>
@@ -19,7 +24,7 @@
                 </h4>
             </div>
         </div>
-        <table class="table table-responsive">
+        <table class="table table-responsive" *ngIf="products && products.length; else noData">
             <thead>
                 <tr>
                     <th>
@@ -46,10 +51,17 @@
                     <td>{{prod.productName | myUpperCase:'upper'}}</td>
                     <td>{{prod.productCode | myUpperCase:'lower'}}</td>
                     <td>{{prod.releaseDate | date}}</td>
-                    <td>{{prod.price | discount:5  | currency:'GBP'  }}</td>
-                    <td>{{prod.starRating}}</td>
+                    <td [ngStyle]="{'background-color':prod.price<20?'tomato':'skyblue'}">
+                        {{prod.price | discount:5  | currency:'GBP'  }}
+                    </td>
+                    <td>
+                        <app-star></app-star>
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <ng-template #noData>
+            <img src="../../assets/loading.gif"/>
+        </ng-template>
     </div>
 </div>
