@@ -55,7 +55,8 @@
                         {{prod.price | discount:5  | currency:'GBP'  }}
                     </td>
                     <td>
-                        <app-star></app-star>
+                        <app-star [rating]="prod.starRating"
+                        (ratingClicked)="onDataRecive($event)"></app-star>
                     </td>
                 </tr>
             </tbody>

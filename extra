@@ -263,3 +263,15 @@ var marks = [0,1,2,3,4]
 marks.filter((a) => {return a*2})
 
 var city = ["London","Delhi", "NewYork",,"Helsinki"]
+
+
+
+var a = 10
+var b = "my age is "+a 
+my age is 10
+var c = `my age is ${a}`
+
+
+
+input bind as Property
+output bind as event

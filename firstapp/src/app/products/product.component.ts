@@ -51,7 +51,7 @@ export class ProductComponent {
             releaseDate: 'May 21, 2016',
             description: 'Curved claw steel hammer',
             price: 8.9,
-            starRating: 4.8,
+            starRating: 2.8,
             imageUrl: 'https://i.ibb.co/TrR7jkM/hammer.png'
         },
         {
@@ -62,7 +62,7 @@ export class ProductComponent {
             releaseDate: 'March 18, 2016',
             description: '15 gallon capacity rolling garden cart',
             price: 25.99,
-            starRating: 4.2,
+            starRating: 2.5,
             imageUrl: 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
         }
     ];
@@ -73,6 +73,10 @@ export class ProductComponent {
 
     getColor() {
         return this.serverStatus === 'Online' ? 'green' : 'red';
+    }
+
+    onDataRecive(recivemessage: string): void {
+        this.title = 'Product App Nareshit ' + recivemessage;
     }
 }
 
