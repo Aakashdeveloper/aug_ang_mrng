@@ -2,6 +2,7 @@ import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MySecondComponent } from './mysecond.component';
@@ -11,6 +12,10 @@ import { MyDiscountPipe } from './products/discount.pipe';
 import { ProductSearchPipe } from './products/product-search.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductService } from './products/product.service';
+import { OrderComponent } from './orders/order.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './shared/notFound.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 
 @NgModule({
     // All Component & Pipe
@@ -21,14 +26,26 @@ import { ProductService } from './products/product.service';
         MyUpperCasePipe,
         MyDiscountPipe,
         ProductSearchPipe,
-        StarComponent
+        StarComponent,
+        OrderComponent,
+        HomeComponent,
+        NotFoundComponent,
+        ProductDetailComponent
     ],
 
     // All Module
     imports: [
         BrowserModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule.forRoot([
+            {path: 'products', component: ProductComponent},
+            {path: 'product/:id', component: ProductDetailComponent},
+            {path: 'orders', component: OrderComponent},
+            {path: 'home', component: HomeComponent},
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+            {path: '**', component: NotFoundComponent}
+        ])
     ],
 
     // Only and only main comnponent

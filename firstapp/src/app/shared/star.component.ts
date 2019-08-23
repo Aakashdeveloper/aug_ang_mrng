@@ -8,7 +8,7 @@ import { Component, OnChanges, OnInit,
 })
 
 
-export class StarComponent implements OnChanges, OnInit {
+export class StarComponent implements OnChanges, OnInit, OnDestroy {
     starWidth: number;
     @Input() rating: number;
 
@@ -27,7 +27,7 @@ export class StarComponent implements OnChanges, OnInit {
         console.log('>>>>> in ngOnInit');
     }
 
-    ngOnDestory(): void {
+    ngOnDestroy(): void {
         console.log('>>>>> in ngOnDestory');
     }
 

@@ -48,7 +48,11 @@
                             [style.width.px]="imageWidth"
                              *ngIf="showImage">
                     </td>
-                    <td>{{prod.productName | myUpperCase:'upper'}}</td>
+                    <td>
+                        <a [routerLink]="['/product', prod.productId]">
+                            {{prod.productName | myUpperCase:'upper'}}
+                        </a>
+                    </td>
                     <td>{{prod.productCode | myUpperCase:'lower'}}</td>
                     <td>{{prod.releaseDate | date}}</td>
                     <td [ngStyle]="{'background-color':prod.price<20?'tomato':'skyblue'}">
