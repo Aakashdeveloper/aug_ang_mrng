@@ -6,10 +6,16 @@ import { RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MySecondComponent } from './mysecond.component';
+import { ProductComponent } from './products/product.component';
+import { MyUpperCasePipe } from './products/myupper.pipe';
+import { MyDiscountPipe } from './products/discount.pipe';
+import { ProductSearchPipe } from './products/product-search.pipe';
 import { StarComponent } from './shared/star.component';
+import { ProductService } from './products/product.service';
 import { OrderComponent } from './orders/order.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './shared/notFound.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductModule } from './products/product.module';
 
 @NgModule({
@@ -17,9 +23,15 @@ import { ProductModule } from './products/product.module';
     declarations: [
         AppComponent,
         MySecondComponent,
+        ProductComponent,
+        MyUpperCasePipe,
+        MyDiscountPipe,
+        ProductSearchPipe,
+        StarComponent,
         OrderComponent,
         HomeComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        ProductDetailComponent
     ],
 
     // All Module
@@ -29,6 +41,8 @@ import { ProductModule } from './products/product.module';
         HttpClientModule,
         ProductModule,
         RouterModule.forRoot([
+            {path: 'products', component: ProductComponent},
+            {path: 'product/:id', component: ProductDetailComponent},
             {path: 'orders', component: OrderComponent},
             {path: 'home', component: HomeComponent},
             {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -40,7 +54,9 @@ import { ProductModule } from './products/product.module';
     bootstrap: [AppComponent],
 
     // All Services
-    providers: []
+    providers: [
+        ProductService
+    ]
 })
 
 export class AppModule {
