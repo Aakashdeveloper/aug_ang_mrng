@@ -2,15 +2,14 @@ import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MySecondComponent } from './mysecond.component';
-import { StarComponent } from './shared/star.component';
 import { OrderComponent } from './orders/order.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './shared/notFound.component';
 import { ProductModule } from './products/product.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     // All Component & Pipe
@@ -28,12 +27,7 @@ import { ProductModule } from './products/product.module';
         FormsModule,
         HttpClientModule,
         ProductModule,
-        RouterModule.forRoot([
-            {path: 'orders', component: OrderComponent},
-            {path: 'home', component: HomeComponent},
-            {path: '', redirectTo: 'home', pathMatch: 'full'},
-            {path: '**', component: NotFoundComponent}
-        ])
+        AppRoutingModule
     ],
 
     // Only and only main comnponent
