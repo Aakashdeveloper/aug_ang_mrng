@@ -275,3 +275,35 @@ var c = `my age is ${a}`
 
 input bind as Property
 output bind as event
+
+
+/***************
+    Angular CLI
+*****************/
+ng generate/g component/c customer-forms
+ng g c customer-forms
+ng g s myservice
+ng g p mypipe
+ng g m module
+
+
+/*******************
+ File walk through
+******************/
+tslint            | No Change    | Default    | standerd of writing code
+tsconfig.json     | No Change    | Default    | Transpile and read the build app
+tsconfig.app.json | No Change    | Default    | Include & exclude the file 
+Readme            | Change Req   | Default    | Description of app
+package.json      | Change Req   | Default    | App command and package
+package-lock.json | No Change    | Default    |  For inter Dependceny
+karama.conf.js    | Min Change   | Default    | Karam Configuration
+angular.json      | Min Change   | Default    | Starting point of App
+.gitignore        | No Change    | Default    | Avoid pushing to git 
+.editorConfig     | Min Change   | Default    | Standerd in text editor 
+
+
+
+
+
+
+
