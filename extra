@@ -306,4 +306,6 @@ angular.json      | Min Change   | Default    | Starting point of App
 
 
 
-
+/*
+npm i -g json-server
+json-server --watch db.json --port 6700
