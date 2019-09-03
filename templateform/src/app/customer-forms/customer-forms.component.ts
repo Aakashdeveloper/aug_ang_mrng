@@ -8,7 +8,19 @@ import { ICustomer } from '../models/cutsomer.model';
 })
 export class CustomerFormsComponent implements OnInit {
 
-  mycustomer = new ICustomer('AAAA', 'BBBB', 'a@a.com');
+  languages: any[] = ['Reacct', 'Angular', 'Node', 'GoLang'];
+
+  mycustomer = new ICustomer('', '', '', '', true, '', '');
+
+  hasCodelangError: boolean = false;
+
+  validateCodeLang(event): void {
+    if (this.mycustomer.codelang === 'default') {
+        this.hasCodelangError = true;
+    } else {
+      this.hasCodelangError = false;
+    }
+  }
 
   constructor() { }
 
