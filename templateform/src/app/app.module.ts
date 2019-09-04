@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerFormsComponent } from './customer-forms/customer-forms.component';
+import { FormPosterService } from './services/form-poster.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,12 @@ import { CustomerFormsComponent } from './customer-forms/customer-forms.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    FormPosterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,12 +4,13 @@
         CustomerForm
     </div>
     <div class="panel-body">
-        <form>
+        <form #form="ngForm" (submit)="submitForm(form)">
             <div class="form-group" [class.has-error]="firstname.invalid">
                 <label for="fName" class="control-label">FirstName</label>
                 <input class="form-control"
                 name="firstName"
-                [(ngModel)]="mycustomer.firstName"
+                [ngModel]="mycustomer.firstName"
+                (ngModelChange)="firstToUpper($event)"
                 required
                 id="fName"
                 #firstname="ngModel"
