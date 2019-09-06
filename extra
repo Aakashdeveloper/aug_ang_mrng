@@ -318,3 +318,21 @@ ng-untouched    ng-pristine      ng-valid
 ng touched & ng-untouched  => worrk when somebody left the field
 ng-dirty & ng-pristine => when value Change
 ng-invalid &  ng-valid => Work on basis of condition
+
+
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/testrepo.git
+git push -u origin master
+
+
+git add .
+git commit -m "first commit"
+git push 
+
+ git checkout -b aakashcode
+
+git add .
+git commit -m "first commit"
+git push -u origin aakashcode
