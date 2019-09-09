@@ -5,13 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerFormsComponent } from './customer-forms/customer-forms.component';
-import { FormPosterService } from './services/form-poster.service';
+import { RegisterFormsComponent } from './registerform/Registerforms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerFormsComponent
+    RegisterFormsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +19,6 @@ import { FormPosterService } from './services/form-poster.service';
     HttpClientModule
   ],
   providers: [
-    FormPosterService
   ],
   bootstrap: [AppComponent]
 })

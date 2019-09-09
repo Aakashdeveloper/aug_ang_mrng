@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import {ICustomer} from '../models/cutsomer.model';
+import {RegisterModel} from './regsiter.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
 @Injectable()
 
-export class FormPosterService {
+export class RegsiterService {
     private url = 'http://localhost:3100/postEmployee';
 
     constructor(private http: HttpClient) {}
 
-    postCustomer(customer: ICustomer) {
+    postCustomer(customer: RegisterModel) {
         return this.http.post(this.url, customer);
     }
 

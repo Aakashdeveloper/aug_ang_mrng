@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ICustomer } from '../models/cutsomer.model';
+import { LoginModel } from './login.model';
 import { NgForm } from '@angular/forms';
-import { FormPosterService} from '../services/form-poster.service';
+import { FormPosterService} from './login.service';
 
 @Component({
   selector: 'app-customer-forms',
