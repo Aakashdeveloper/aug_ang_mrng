@@ -11,7 +11,7 @@
                     <input class="form-control"
                     id="mail"
                     pattern="^([a-z0-9_]+)@([a-z0-9]+)\.([a-z]{2,5})$"
-                    [(ngModel)]="mycustomer.email"
+                    [(ngModel)]="login.email"
                     #email="ngModel"
                     name="email"/>
                     <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
@@ -24,7 +24,7 @@
                     <input class="form-control"
                     id="pass"
                     type="password"
-                    [(ngModel)]="mycustomer.password"
+                    [(ngModel)]="login.password"
                     #password="ngModel"
                     minlength="5"
                     name="password"/>

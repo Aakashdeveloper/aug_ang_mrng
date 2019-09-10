@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { LoginService} from '../loginforms/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-forms',
@@ -9,25 +9,24 @@ import { LoginService} from '../loginforms/login.service';
 })
 export class ProfileComponent implements OnInit {
 
+  token;
+  userinfo;
 
 
-
-  constructor(private loginService: LoginService) {}
-
-
-
-
-  submitForm(form: NgForm): void {
-    // console.log(form.value);
-    /*this.formPosterService.postCustomer(form.value)
-      .subscribe((res) => console.log('data submitted'));
-*/
-
-  }
-
+  constructor(private loginService: LoginService,
+              private router: Router) {}
 
 
   ngOnInit() {
+    this.token = localStorage.getItem('TOKEN_NUMBER');
+    this.loginService.getUserRole(this.token)
+      .subscribe((res) =>  this.userinfo = res);
+  }
+
+  logout(): void {
+    localStorage.removeItem('TOKEN_NUMBER');
+    localStorage.removeItem('ROLE_TYPE');
+    this.router.navigate(['/login']);
   }
 
 }

@@ -7,12 +7,18 @@ import { Observable } from 'rxjs';
 @Injectable()
 
 export class LoginService {
-    private url = 'http://localhost:3100/postEmployee';
+    private url = 'http://localhost:5000/api/auth/login';
+    private userInfo = 'http://localhost:5000/api/auth/userinfo';
 
     constructor(private http: HttpClient) {}
 
-    postCustomer(customer: LoginModel) {
-        return this.http.post(this.url, customer);
+    loginUser(login: LoginModel) {
+        return this.http.post(this.url, login);
+    }
+
+    getUserRole(token) {
+        localStorage.setItem('TOKEN_NUMBER', token);
+        return this.http.get(this.userInfo, {headers: {'x-access-token': token}});
     }
 
 }
