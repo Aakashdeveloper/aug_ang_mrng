@@ -13,7 +13,8 @@
             {{userinfo.role === "admin"? "Add New User": "View Your profile"}}
         </h2>
         <div *ngIf="userinfo.role==='admin'">
-            <button class="btn btn-success">
+            <button class="btn btn-success"
+            [routerLink]="['/admin']">
                 Add Admin User
             </button>
         </div>

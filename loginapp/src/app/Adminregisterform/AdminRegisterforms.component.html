@@ -1,0 +1,61 @@
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Register Form
+    </div>
+    <div class="panel-body">
+        <form #form="ngForm" (submit)="submitForm(form)">
+            <div class="form-group">
+                <label for="fName" class="control-label">FirstName</label>
+                <input class="form-control"
+                name="name"
+                [(ngModel)]="user.name"
+                required
+                id="fName"
+                />
+            </div>
+           
+            <div class="form-group">
+                    <label for="mail"
+                    class="control-label">Email</label>
+                    <input class="form-control"
+                    id="mail"
+                    pattern="^([a-z0-9_]+)@([a-z0-9]+)\.([a-z]{2,5})$"
+                    [(ngModel)]="user.email"
+                    name="email"/>
+            </div>
+            <div class="form-group">
+                    <label for="pass"
+                    class="control-label">Password</label>
+                    <input class="form-control"
+                    id="pass"
+                    type="password"
+                    [(ngModel)]="user.password"
+                    minlength="5"
+                    name="password"/>
+            </div>
+            <div class="form-group">
+                <label for="clang" class="control-label">Role</label>
+                    <select class="form-control"
+                    name="codelang"
+                    [(ngModel)]="user.codelang"
+                    id="clang"
+                    >
+                        <option *ngFor="let rl of role">
+                            {{rl}}
+                        </option>
+                          
+                    </select>
+                   
+            </div>
+            <button class="btn btn-success"
+                    type="submit">
+                    Submit
+            </button> &nbsp;
+            <button class="btn btn-danger"
+                type="reset">
+                Reset
+            </button>
+        </form>
+    </div>
+</div>
