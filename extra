@@ -336,3 +336,35 @@ git push
 git add .
 git commit -m "first commit"
 git push -u origin aakashcode
+
+ server {
+        listen       8081;
+        server_name  localhost;
+
+        location / {
+	     root   /var/www/react-app;
+            index  index.html index.htm;
+        }
+    }
+
+
+
+
+    server {
+        listen       8082;
+        server_name  localhost;
+
+        location / {
+	    proxy_pass http://127.0.0.1:8600;
+	    proxy_http_version 1.1;
+    	    proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+    }
+
+
+docker build . -t augang
+docker image ls
+docker run -p 9000:3000 f4b2454d5584
